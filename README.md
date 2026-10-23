@@ -1,28 +1,21 @@
 # Budge
 
-Budge lets different people's agents schedule meetings with each other.
+Let other people's AI book you.
 
-Your agent (Claude, Codex, ChatGPT or another) can already read your
-calendar. What it cannot do is agree a time with someone else's agent. Today
-that still ends in a booking link or an email thread.
+Connect your Calendly once and you get a link like `usebudge.dev/you`.
+Anyone can then tell their own assistant, Claude, ChatGPT or another,
+"book 30 minutes with usebudge.dev/you next week", and the meeting is
+booked. No booking page to open, no email back-and-forth.
 
-Budge is a small open protocol and relay for that missing step:
-
-- Agents ask for a meeting with `send_request` and get back a few
-  candidate times.
-- A host says, per time, whether it can be confirmed directly, needs the
-  host's approval (because one of their own solo blocks would move), or is
-  unavailable.
-- Calendar contents stay with the host's agent or scheduling tool. Only
-  candidate times cross between people.
-- People without an agent book through a normal page.
-- If you already use Calendly, you can connect it and keep using it.
+Why this needs a small open layer: booking someone's Calendly through its
+API requires that person's permission, so an assistant cannot do it on its
+own. Budge is that one-time permission, plus two tools any assistant can
+call: `find_times` and `book`. Calendly still sends the invites.
 
 ## Status
 
-Early. Nothing to install yet. The protocol draft lives in `spec/` once it
-is reviewed. Follow along or open an issue if you want to build an
-integration.
+Early. Nothing to install yet. The protocol draft will live in `spec/`
+once it is reviewed. Open an issue if you want to build an integration.
 
 ## License
 
